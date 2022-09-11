@@ -1,0 +1,51 @@
+.big-letter {
+    font-size: 80px;
+}
+.mid-letter {
+    font-size: 40px;
+}
+
+
+
+/* 背景画像 */
+.bgi {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    /* background-size: cover; */
+}
+.img-main{    
+    height: 100%;
+    display:block;
+    margin:auto;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.img-filter{
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+
+
+/* ipアドレスの背景 */
+.hello {
+    background-color: rgb(0, 0, 0);
+    width: 70%;
+    margin-top: 450px;
+    margin-left: 30px;
+}
+
+/* ipアドレスのテキスト */
+.hello-txt {
+    color: rgb(255, 132, 0);
+}
