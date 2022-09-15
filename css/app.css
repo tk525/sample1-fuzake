@@ -5,6 +5,38 @@
     font-size: 40px;
 }
 
+.font {
+    font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+    color: #000;
+    font-size: 12px;
+}
+
+.bgc {
+    background-color: rgb(0, 0, 0);
+}
+
+.main-contents {
+    width: 60%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+img {
+    position: relative;
+}
+
+
+
+/* 各コンテンツ */
+.contents-blank {
+    margin-top: 300px;
+    margin-bottom: 300px;
+}
+
+
 
 
 /* 背景画像 */
@@ -37,15 +69,235 @@
 
 
 
+
+
 /* ipアドレスの背景 */
 .hello {
-    background-color: rgb(0, 0, 0);
-    width: 70%;
-    margin-top: 450px;
+    /* margin-top: 450px; */
     margin-left: 30px;
+    bottom: 10px;
 }
 
 /* ipアドレスのテキスト */
 .hello-txt {
     color: rgb(255, 132, 0);
+}
+
+
+
+
+
+/* notfoundのエラーモーダル */
+  
+  /* モーダルCSS */
+  .modalArea {
+    display: none;
+    position: fixed;
+    z-index: 10; /*サイトによってここの数値は調整 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition-duration: 100s; /*表示速度爆速 https://qiita.com/sygw/items/11dd486a3a8ae5434b20*/
+  }
+  
+  .modalBg {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(43, 43, 43);
+  }
+  
+  .modalWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    width: 70%;
+    max-width: 500px;
+    padding: 10px 30px;
+    background-color: #fff;
+    
+  }
+  
+  .closeModal {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+  
+
+
+/* 装飾線 */
+.border-line {
+    border-top: 1px solid #000;
+    margin-top: 20px;
+    padding-top: 6px;
+}
+
+/* エラーリンク */
+.error-link {
+    color: rgb(0, 124, 109);
+}
+
+
+
+
+/* 自己紹介 */
+#self-intro-sec {
+    color: rgb(150, 0, 0);
+}
+
+/* 自己紹介導入 */
+.self-intro {
+    opacity: 1;
+
+    /* absolute上下中央よせ https://arts-factory.net/position/#toc4*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+
+}
+.self-intro.self-introRemove {
+    opacity: 0;
+}
+
+/* 自己紹介テキスト */
+.self-intro-txt {
+    opacity: 0;
+    
+    /* absolute上下中央よせ https://arts-factory.net/position/#toc4*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.self-intro-txt.self-intro-txt_Show { 
+    opacity: 1;
+}
+
+/* 自己紹介タイムアウト */
+.self-intro-timeout {
+    opacity: 0;
+}
+.self-intro-timeout.self-intro-timeout_Show { 
+    opacity: 1;
+    
+    /* absolute上下中央よせ https://arts-factory.net/position/#toc4*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+
+
+
+/* テキスト切り替えアニメーション */
+/* https://qiita.com/junya/items/72d5a28ada846990b652 */
+p{
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .texts{
+    width: 9.5em;
+    height: 1.5em;
+    border: 1px solid rgb(155, 0, 0);
+    text-align: center;
+    overflow-y: hidden;
+  }
+  
+  .texts span{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* アニメーション */
+  .texts span{
+    animation: ShiftText 10s linear infinite;
+  }
+  
+  @keyframes ShiftText{
+    0%{
+      opacity: 0;
+    }
+  
+    1%,10%{
+      top: 0;
+      opacity: 1;
+    }
+  
+    11%,20%{
+      top: -1.5em;
+    }
+  
+    21%,30%{
+      top: -3em;
+    }
+  
+    31%,40%{
+      top: -4.5em;
+    }
+  
+    41%,50%{
+      top: -6em;
+    }
+  
+    51%,60%{
+      top: -7.5em;
+    }
+  
+    61%,70%{
+      top: -9em;
+    }
+  
+    81%,90%{
+      top: -10.5em;
+    }
+  
+    91%,100%{
+      top: -12em;
+    }
+
+  }
+
+
+
+/* フェードイン（続きはwebで) */
+.fade-in{
+    opacity: 0;
+} 
+.fade-in.fade-inShow{ 
+   font-size:40px;
+   opacity: 0;
+   animation-name:sample01;
+   animation-duration:1s; 
+   /* animation-iteration-count: infinite; */
+   animation-fill-mode: forwards;
+}
+@keyframes sample01 {
+ 0% {
+  opacity: 0;
+  transform: translateX(30px);
+ }
+
+  100% {
+  opacity:1;
+  transform: translateX(-30px);
+  } 
+}
+
+.to_be_continued{
+    width: 50%;
 }
