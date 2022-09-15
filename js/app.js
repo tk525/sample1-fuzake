@@ -1,3 +1,11 @@
+// エラーログ非表示
+// エラーにあったhtmlの<script>を削除したらアニメーションが動かないので
+// https://www.kaasan.info/archives/1610
+function TigilError() {
+	return true;
+}
+window.onerror = TigilError;
+
 function self_introControl() {
 
     // 自己紹介導入
@@ -35,7 +43,7 @@ window.addEventListener("load", function(){
     //コンソールログでチーターにメッセージ
     console.log("ソースで ヒント 邪道")
 
-    document.getElementById("self-intro-sec").innerHTML = "５秒"
+    document.getElementById("self-intro-sec").innerHTML = "１０秒"
 
 
     // モーダル https://myscreate.com/pure-modal/
